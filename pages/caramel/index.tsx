@@ -1,4 +1,3 @@
-import Card, { CardProps } from '@/components/Card'
 import ListItem, { ListItemProps } from '@/components/ListItem'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
