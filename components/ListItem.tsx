@@ -1,13 +1,15 @@
 import React from 'react'
 import clsx from 'clsx'
+import Link from 'next/link'
 
 export type ListItemProps = {
+  id: string
   title: string
   type: 'job' | 'story' | 'comment' | 'poll'
   className?: string
 }
 
-const ListItem: React.FC<ListItemProps> = ({ title, type, className }) => {
+const ListItem: React.FC<ListItemProps> = ({ id, title, type, className }) => {
   let badgeColor = ''
   let badgeText = ''
   switch (type) {
@@ -33,14 +35,14 @@ const ListItem: React.FC<ListItemProps> = ({ title, type, className }) => {
       break
   }
   return (
-    <div className={clsx('bg-white rounded-lg shadow-lg p-6', className)}>
+    <Link className={clsx('bg-white rounded-lg shadow-lg p-6', className)} href={`/caramel/${id}`}>
       <div
         className={`inline-block rounded-full px-3 py-1 text-sm font-semibold text-white ${badgeColor} mb-2`}
       >
         {badgeText}
       </div>
       <h2 className='text-lg font-bold mb-2 line-clamp-2'>{title}</h2>
-    </div>
+    </Link>
   )
 }
 
