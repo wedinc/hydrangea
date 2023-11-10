@@ -1,7 +1,7 @@
-import Card, { CardProps } from '@/components/Card'
 import ListItem, { ListItemProps } from '@/components/ListItem'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
+import { signOut } from 'next-auth/react'
 
 export default function Caramel() {
   const [ids, setIds] = useState<number[]>([])
@@ -41,6 +41,9 @@ export default function Caramel() {
           return <ListItem {...newArticle} className='h-36' />
         })}
       </ul>
+      <button className='btn btn-secondary' onClick={() => signOut()}>
+        Sign out
+      </button>
     </div>
   )
 }

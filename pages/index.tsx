@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { signOut } from 'next-auth/react'
 
 export default function Home() {
   return (
@@ -7,6 +8,10 @@ export default function Home() {
       <Link href='/caramel' className='btn btn-primary'>
         Caramel
       </Link>
+
+      <button className='btn btn-secondary' onClick={() => signOut()}>
+        Sign out
+      </button>
     </>
   )
 }
