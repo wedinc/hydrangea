@@ -38,7 +38,7 @@ export default function Caramel() {
       <ul className='flex flex-col gap-4 w-1/3'>
         {articles.map((article) => {
           const newArticle = { ...article, title: article.title.repeat(2) }
-          return <ListItem {...newArticle} className='h-36' />
+          return <ListItem {...newArticle} key={newArticle.title} className='h-36' />
         })}
       </ul>
       <button className='btn btn-secondary' onClick={() => signOut()}>
